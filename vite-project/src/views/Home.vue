@@ -22,6 +22,45 @@
 </template>
 
 <script>
+const book = [
+  {
+    email: "53422659@qq.com",
+    first_name: "Grace",
+    id: 1,
+    last_name: "You",
+  },
+  {
+    email: "contact2@example.com",
+    first_name: "James",
+    id: 2,
+    last_name: "Smith",
+  },
+  {
+    email: "contact3@example.com",
+    first_name: "Emma",
+    id: 3,
+    last_name: "Johnson",
+  },
+  {
+    email: "contact4@example.com",
+    first_name: "Michael",
+    id: 4,
+    last_name: "Williams",
+  },
+  {
+    email: "contact5@example.com",
+    first_name: "Sophia",
+    id: 5,
+    last_name: "Brown",
+  },
+  {
+    email: "contact6@example.com",
+    first_name: "William",
+    id: 6,
+    last_name: "Jones",
+  },
+];
+
 import { ref, computed, watch, onMounted } from "vue";
 import { useRoute } from "vue-router";
 
@@ -35,6 +74,8 @@ export default {
       const storedContacts = localStorage.getItem("contacts");
       if (storedContacts) {
         contacts.value = JSON.parse(storedContacts);
+      } else {
+        contacts.value = book;
       }
     };
 

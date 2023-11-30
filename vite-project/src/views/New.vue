@@ -36,6 +36,7 @@ export default {
       first_name: "",
       last_name: "",
       email: "",
+      id: crypto.randomUUID(),
     });
     const router = useRouter();
 
@@ -44,8 +45,10 @@ export default {
       contact.value.id = contacts.length + 1; // Simple ID assignment
       contacts.push(contact.value);
       localStorage.setItem("contacts", JSON.stringify(contacts));
-      router.push("/"); // Redirect to the home page
+      router.push("/");
+      // Redirect to the home page
     };
+    console.log(contact);
 
     return {
       contact,
